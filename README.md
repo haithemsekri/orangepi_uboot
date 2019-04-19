@@ -3,26 +3,26 @@
 Precompiled u-boot binaries for 32bit ARM Orange PI boards, optimized for small size.
 
 ### 201807 release (native ARMv7 build)
-> Build "machine" Kernel version : Linux archOrangePiPC 4.17.6-1-ARCH #1 SMP PREEMPT Fri Jul 13 00:41:20 UTC 2018 armv7l GNU/Linux
-GCC options: CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt"
-GCC version: gcc (GCC) 8.1.1 20180531
-tested on:
-Orange PI PC
-Orange PI Plus 2e
+  Build "machine" Kernel version : Linux archOrangePiPC 4.17.6-1-ARCH #1 SMP PREEMPT Fri Jul 13 00:41:20 UTC 2018 armv7l GNU/Linux  
+  GCC options: CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt"  
+  GCC version: gcc (GCC) 8.1.1 20180531  
+  tested on:  
+  Orange PI PC  
+  Orange PI Plus 2e  
 
 ### 201811 release (native ARMv7 build)
-> Build "machine" Kernel version : Linux archOrangePiPC 4.17.6-1-ARCH #1 SMP PREEMPT Fri Jul 13 00:41:20 UTC 2018 armv7l GNU/Linux
-GCC options: CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt"
-GCC version: gcc (GCC) 8.1.1 20180531
-tested on :
-Orange PI PC
+  Build "machine" Kernel version : Linux archOrangePiPC 4.17.6-1-ARCH #1 SMP PREEMPT Fri Jul 13 00:41:20 UTC 2018 armv7l GNU/Linux  
+  GCC options: CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt"  
+  GCC version: gcc (GCC) 8.1.1 20180531  
+  tested on :  
+  Orange PI PC  
 
 ### 201904 release (Cross-compile)
-> Build machine Kernel version: Arch Linux 4.19.2-1-ck #1 SMP PREEMPT Thu Jan 3 17:40:34 CET 2019 x86_64 GNU/Linux
-GCC options: CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt" 
-GCC version: gcc version 8.3.0 (Arch Repository) 
-tested on :
-Orange PI PC
+  Build machine Kernel version: Arch Linux 4.19.2-1-ck #1 SMP PREEMPT Thu Jan 3 17:40:34 CET 2019 x86_64 GNU/Linux  
+  GCC options: CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt"  
+  GCC version: gcc version 8.3.0 (Arch Repository)  
+  tested on :  
+  Orange PI PC  
 
 Steps to rebuild:
 ```bash
