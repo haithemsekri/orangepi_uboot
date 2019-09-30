@@ -1,6 +1,6 @@
 # orangepi_uboot
   
-Precompiled u-boot binaries for 32bit ARM Orange PI boards, optimized for small size.
+Precompiled u-boot binaries for 32bit ARM Orange PI boards, optimized for small size. DTB (device tree blob) included from release 201907!
 
 ### 201807 release (native ARMv7 build)
   Build "machine" Kernel version : Linux archOrangePiPC 4.17.6-1-ARCH #1 SMP PREEMPT Fri Jul 13 00:41:20 UTC 2018 armv7l GNU/Linux  
@@ -24,11 +24,18 @@ Precompiled u-boot binaries for 32bit ARM Orange PI boards, optimized for small 
   tested on :  
   Orange PI PC  
 
+### 201907 release (Cross-compile)
+  Build machine Kernel version: Arch Linux archBalazsPC 5.2.10-1-ck #1 SMP PREEMPT Wed Sep 4 14:09:32 CEST 2019 x86_64 GNU/Linux
+  GCC options: CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt"  
+  GCC version: gcc version 9.1.0 (Arch Repository)  
+  tested on :  
+  Orange PI Zero (Xradio wifi works with https://aur.archlinux.org/packages/xradio-git alongside the dtb file!)  
+
 Steps to rebuild:
 ```bash
-wget ftp://ftp.denx.de/pub/u-boot/u-boot-2019.04.tar.bz2
-tar -xf u-boot-2019.04.tar.bz2
-cd u-boot-2019.04
+wget ftp://ftp.denx.de/pub/u-boot/u-boot-2019.07.tar.bz2
+tar -xf u-boot-2019.07.tar.bz2
+cd u-boot-2019.07
 virtualenv -p /usr/bin/python2.7 my_uboot
 source my_uboot/bin/activate
 make orangepi_pc_defconfig
@@ -36,6 +43,6 @@ make ARCH=arm MARCH=armv7 CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d1
 ```
 
 ### Size comparison across releases
-|  	| 201807 	| 201811 	| 201904 	|
-|-------------	|--------	|--------	|--------	|
-| OrangePI PC 	| 361K 	| 413K 	| 459K 	|
+|             | 201807 | 201811 | 201904 | 201907 |
+|-------------|--------|--------|--------|--------|
+| OrangePI PC | 361K   | 413K   | 459K   | 470K   |
