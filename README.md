@@ -43,8 +43,8 @@ Precompiled u-boot binaries for all 32bit and 64bit Allwinner based Orange PI bo
 Steps to rebuild (OPI PC || 32bit Allwinner H3):
 ```bash
 wget ftp://ftp.denx.de/pub/u-boot/u-boot-2020.01.tar.bz2
-tar -xf u-boot-2019.07.tar.bz2
-cd u-boot-2019.07
+tar -xf u-boot-2020.01.tar.bz2
+cd u-boot-2020.01
 virtualenv -p /usr/bin/python2.7 my_uboot
 source my_uboot/bin/activate
 make orangepi_pc_defconfig
@@ -59,8 +59,8 @@ cd arm-trusted-firmware
 git checkout v2.2
 make CROSS_COMPILE=aarch64-linux-gnu- PLAT=sun50i_a64 DEBUG=1 -j4 bl31
 wget ftp://ftp.denx.de/pub/u-boot/u-boot-2020.01.tar.bz2
-tar -xf u-boot-2019.07.tar.bz2
-cd u-boot-2019.07
+tar -xf u-boot-202-.01.tar.bz2
+cd u-boot-2020.01
 cp ${arm-trusted-firmware_dir}/build/sun50i_a64/debug/bl31.bin .
 virtualenv -p /usr/bin/python2.7 my_uboot
 source my_uboot/bin/activate
