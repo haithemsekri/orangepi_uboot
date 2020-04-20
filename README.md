@@ -69,6 +69,14 @@ make ARCH=arm MARCH=armv8a CFLAGS="-march=armv8-a -march=armv8-a -Os -pipe -fsta
 dd if=orangepi_zero_plus/u-boot-sunxi-with-spl.bin of=/dev/sdX bs=8k seek=1
 ```
 
+Bulk rebuild 
+```bash
+cd u-boot
+virtualenv -p /usr/bin/python2.7 my_uboot
+source my_uboot/bin/activate
+for i in $(grep -l CONFIG_MACH_SUN8I configs/orangepi_* | awk -v FS='/' '{print $2}') ; do make distclean ; make clean ; make ARCH=arm MARCH=armv7 CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt" CROSS_COMPILE=/usr/bin/arm-none-eabi- -j4 $i ; make ARCH=arm MARCH=armv7 CFLAGS="-march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -Os -pipe -fstack-protector-strong -fno-plt" CROSS_COMPILE=/usr/bin/arm-none-eabi- -j4 ; mkdir 32bit/$i ; cp u-boot-sunxi-with-spl.bin 32bit/$i ; done
+```
+
 ### Size comparison across releases
 |             | 201807 | 201811 | 201904 | 201907 | 202001 |
 |-------------|--------|--------|--------|--------|--------|
