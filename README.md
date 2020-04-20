@@ -69,7 +69,7 @@ make ARCH=arm MARCH=armv8a CFLAGS="-march=armv8-a -march=armv8-a -Os -pipe -fsta
 dd if=orangepi_zero_plus/u-boot-sunxi-with-spl.bin of=/dev/sdX bs=8k seek=1
 ```
 
-Bulk rebuild 
+Bulk rebuild
 ```bash
 cd u-boot
 virtualenv -p /usr/bin/python2.7 my_uboot
@@ -81,3 +81,8 @@ for i in $(grep -l CONFIG_MACH_SUN8I configs/orangepi_* | awk -v FS='/' '{print 
 |             | 201807 | 201811 | 201904 | 201907 | 202001 |
 |-------------|--------|--------|--------|--------|--------|
 | OrangePI PC | 361K   | 413K   | 459K   | 470K   | 467K   |
+
+Test general ARM images
+```bash
+qemu-system-arm -nographic -kernel ../vmlinuz -initrd ../initrd.gz -m 512 -M virt -append "root=/dev/ram"
+```
